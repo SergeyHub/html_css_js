@@ -1,0 +1,615 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    /*background-color: #21a453;*/
+}
+
+input, select, textarea{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.wrapper{
+    width: 1170px;
+    margin: 0 auto;
+    /*background-color: rgba(255, 0, 0, 0.35);*/
+}
+
+.title{
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+/* ....... header ........ */
+
+.header{
+    position: absolute;
+    left: 0;
+    top: 00px;
+    width: 100%;
+    z-index: 400;
+    height: 80px;
+    background-color: transparent; /*#e9e987;*/
+    /*box-shadow: 0 2px 3px rgba(0,0,0, .1);*/
+    /*position: relative;*/
+    transition: all 0.5s ease;
+}
+
+.header.fixed{
+    /*background-color: white; /*#f3f2f1; /*#fff;*/
+    /*background-color: #ffefb7;*/
+    background-color: #ffefb7;
+    box-shadow: 0 2px 3px rgba(0,0,0, .3);
+    position: fixed;
+}
+
+.header .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: red;*/
+    height: 100%;
+}
+
+.header .logo{
+    background: url("../images/logo.svg" ) no-repeat;
+    width: 146px;
+    height: 24px;
+    display: block;
+    position: relative;
+    margin-left: -70px;
+}
+
+.header .login a{
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.5s ease;
+}
+.header .login a:hover{
+    color: #06c167;
+}
+
+
+.header .nav-toggle{
+    height: 34px;
+    width: 40px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    cursor: pointer;
+    display: none; /*flex;*/
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    z-index: 200;
+}
+
+.header.fixed .nav-toggle{
+    border-color: #000000;
+}
+
+.header .nav-toggle span{
+    height: 1px;
+    display: block;
+    width: 16px;
+    background-color: #000;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.header .nav-toggle span:before,
+.header .nav-toggle span:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #000;
+    transition: all 0.5s ease;
+}
+
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span:before,
+.header.fixed .nav-toggle span:after{
+    background-color: #000;
+}
+
+.header .nav-toggle span:before{
+    transform: translateY(-6px);
+}
+
+.header .nav-toggle span:after{
+    transform: translateY(6px);
+}
+
+/* ......... banner  .......... */
+
+.banner{
+    /*background-color: #66D19E;*/
+    /*background-color: #e8b600;*/
+    background-color: #ffefb7;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.banner::before,
+.banner::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.banner::before{
+    left: 0;
+    /*width: 419px;*/
+    width: 100%;
+    z-index: 50;
+    background-image: url("../images/left-baner.svg");
+    background-repeat: no-repeat;
+}
+
+.banner::after{
+    right: -875px;
+    width: 100%;
+    z-index: 50;
+    background-image: url("../images/right-baner.svg");
+    background-repeat: no-repeat;
+}
+
+.banner__title{
+    font-size: 51px;
+    line-height: 61px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 150;
+}
+
+.search form{
+    display: flex;
+    width: 720px;
+}
+
+.search input[type="text"]{
+    background: #fff url("../images/icon-location.svg") 20px 50% no-repeat;
+    border: none;
+    outline: none;
+    padding: 18px 18px 18px 53px;
+    width: 519px;
+    color: #737373;
+    font-size: 16px;
+}
+
+.search__button{
+    background-color: #000;
+    color: white;
+    padding: 18px 27px;
+    font-size: 16px;
+    font-weight: 700;
+    width: 164px;
+    height: 56px;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.search__button:hover{
+    background-color: #06663b;
+}
+
+/* products */
+
+.products{
+    margin-top: 40px;
+}
+
+.products__items{
+    display: flex;
+    margin: 0 -15px;
+}
+
+.product__box{
+    padding: 0 15px;
+}
+
+.product__image{
+    width: 370px;
+    height: 240px;
+}
+
+.products__title{
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.products__title span{
+    color: #21a453;
+}
+
+.product__item{
+    position: relative;
+}
+
+.product__free-delivey{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #734bda;
+    text-transform: uppercase;
+    padding: 8px 10px;
+    color: white;
+}
+
+.product__title{
+    font-size: 16px;
+    /*font-weight: 500;
+    padding: 6px 50px 6px 0px;
+    color: #000;*/
+}
+
+.product__delivery{
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+.product__info{
+    display: flex;
+    margin-top: 15px;
+}
+
+.product__info{
+    display: flex;
+    margin-top: 15px;
+}
+
+.product__info-left{
+    flex: 1;
+}
+
+.product__info-right {
+    flex: 0 0 36px;
+}
+
+.product__rating {
+    background-color: #eee;
+    font-size: 14px;
+    font-weight: 500;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product__rating.success{
+    background-color: #f0faf3;
+    color: #21a453;
+}
+
+.products__tags{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.products__tags span{
+    font-size: 12px;
+    color: #959595;
+    position: relative;
+    padding-right: 7px;
+    margin-right: 5px;
+}
+
+.products__tags span:last-child::before{
+    display: none;
+}
+
+.products__tags span::before{
+    content: "";
+    position: absolute;
+    right: -3px;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    background: #000;
+    border-radius: 50%;
+}
+
+/* applications */
+
+.apps_img{
+    height: 80px;
+    width: 80px;
+    margin-top: 17px;
+}
+
+.apps{
+    margin-top: 40px;
+    padding-top: 50px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+}
+
+.apps__title{
+    font-size: 31px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+.apps__buttons a{
+    margin-top: 20px;
+    transition: all 0.75s ease;
+}
+
+.apps__buttons a:hover{
+    background-color: #e8b600;
+    color: #035029;
+}
+
+.apps__buttons a{
+    background-color: #EEEEEE;
+    background-repeat: no-repeat;
+    background-position: 20px 50%;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 13px 25px 13px 45px;
+    margin-left: 77px;
+}
+
+.apps__buttons a.icon__ios{
+    background-image: url("../images/icon-ios.svg");
+}
+
+.apps__buttons a.icon__android{
+    background-image: url("../images/icon-android.svg");
+}
+
+/*    cities  */
+
+.cities{
+    margin-top: 80px;
+}
+
+.cities__items{
+    display: flex;
+}
+
+.cities__col{
+    flex: 0 0 25%;
+    min-width: 25%;
+}
+
+.cities__item{
+    margin-bottom: 17px;
+}
+
+.cities__item a{
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+
+.cities__item a:hover{
+    color: #21a453;
+    text-decoration: underline;
+}
+
+/*   services  */
+
+.services{
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.services__items{
+    display: flex;
+    margin: 0 -15px;
+}
+
+.services__item{
+    flex: 0 0 33.333%;
+    max-width: 33.3333%;
+}
+
+.services__box{
+    padding: 0 15px;
+}
+
+.services__title{
+    font-size: 29px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.services__link{
+    font-size: 19px;
+    margin-top: 10px;
+}
+
+.services__link a{
+    color: black;
+    transition: all 0.75s ease;
+}
+
+.services__link a:hover{
+    color: #21a453;
+}
+
+/*   footer  */
+
+.footer{
+    background: #000;
+    padding: 70px 0 40px;
+}
+
+.footer__top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__left{
+    display: flex;
+    justify-content: space-between;
+    /*background-color: #fff;*/
+}
+
+.footer__right .footer__menu{
+    margin-right: 0;
+}
+
+.footer__right{
+    display: flex;
+}
+
+.footer__menu{
+    flex: 0 0 240px;
+    max-width: 240px;
+    margin-right: 20px;
+}
+
+.footer__menu:last-child{
+    margin-right: 0;
+}
+
+.footer__menu h3{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 35px;
+}
+
+.footer__menu.about{
+    margin-bottom: 24px;
+}
+
+.footer__menu.about:last-child{
+    margin-bottom: 0;
+}
+
+.footer__menu a{
+    color: #cacaca;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.footer__menu a:hover{
+    text-decoration: underline;
+}
+
+.footer__logo{
+    background-image: url("../images/white-logo.svg");
+    width: 146px;
+    height: 24px;
+    display: block;
+}
+
+.about__link {
+    margin-bottom: 27px;
+}
+
+.language a{
+    background-image: url("../images/languages.svg");
+    background-repeat: no-repeat;
+    padding-left: 24px;
+}
+
+.footer__apps-link{
+    width: 135px;
+    height: 40px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 135px 40px;
+    margin-right: 12px;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.footer__apps-link:hover{
+    opacity: 0.75;
+}
+
+.footer__apps{
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+
+.footer__apps-link:last-child{
+   margin-right: 0;
+}
+
+.footer__apps-link.appstore{
+    background-image: url("../images/appstore.svg");
+
+}
+
+.footer__apps-link.googleplay{
+    background-image: url("../images/googleplay.svg");
+
+}
+
+.footer__info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__nav{
+    text-align: right;
+    color: #fff;
+}
+
+/*
+.footer__box{
+    background-color: black;
+}
+
+.footer__links{
+    display: flex;
+    height: 430px;
+}
+
+.about{
+    width: 270px;
+    height: 276px;
+}
+
+.about__link{
+    color: white;
+    font-size: 16px;
+    margin-top: 27px;
+    text-decoration: none;
+}
+
+
+.about__link a{
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    text-decoration: none;
+}*/
+
